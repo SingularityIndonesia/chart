@@ -25,6 +25,7 @@ import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.graphics.drawscope.drawIntoCanvas
+import io.github.singularityindonesia.chartcore.compose.LocalColorFilter
 import io.github.singularityindonesia.chartcore.compose.LocalFullCircleDegree
 import io.github.singularityindonesia.chartcore.compose.LocalPieThicknessPercent
 import io.github.singularityindonesia.chartcore.compose.LocalStartAngleDegree
@@ -41,6 +42,7 @@ fun PieChart(
     val startAngleDegree = LocalStartAngleDegree.current
     val fullCircleDegree = LocalFullCircleDegree.current
     val thickness = LocalPieThicknessPercent.current
+    val colorFilter = LocalColorFilter.current
 
     // map items into list of start angle vs pie slices
     val startAngleVsPieSlices by remember(items) {
@@ -89,6 +91,7 @@ fun PieChart(
                 drawPath(
                     path = pvc.first,
                     color = pvc.second,
+                    colorFilter = colorFilter
                 )
             }
         }

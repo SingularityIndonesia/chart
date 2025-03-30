@@ -16,7 +16,10 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.ColorFilter
+import androidx.compose.ui.graphics.ColorMatrix
 import androidx.compose.ui.unit.dp
+import io.github.singularityindonesia.chartcore.compose.LocalColorFilter
 import io.github.singularityindonesia.chartcore.record.ChartItem
 import io.github.singularityindonesia.chartcore.compose.LocalFullCircleDegree
 import io.github.singularityindonesia.chartcore.compose.LocalPieThicknessPercent
@@ -52,6 +55,25 @@ fun PieChartPage(
                 modifier = Modifier.size(200.dp),
                 items = items
             )
+        }
+        item {
+            // region Red Line Chart
+            // filter line color into red
+            val grayScaleFilter = remember {
+                ColorFilter.colorMatrix(
+                    ColorMatrix().apply {
+                        setToSaturation(0f)
+                    }
+                )
+            }
+            CompositionLocalProvider(
+                LocalColorFilter provides grayScaleFilter
+            ) {
+                PieChart(
+                    modifier = Modifier.size(200.dp),
+                    items = items
+                )
+            }
         }
         item {
             CompositionLocalProvider(
