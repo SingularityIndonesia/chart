@@ -25,6 +25,7 @@ import io.github.singularityindonesia.piechart.PieChart
 
 @Composable
 fun PieChartPage(
+    modifier: Modifier = Modifier,
     items: List<ChartItem>
 ) {
     var animate by remember { mutableStateOf(false) }
@@ -39,7 +40,8 @@ fun PieChartPage(
 
     LazyVerticalGrid(
         modifier = Modifier
-            .fillMaxSize(),
+            .fillMaxSize()
+            .then(modifier),
         columns = GridCells.Fixed(2),
         contentPadding = PaddingValues(16.dp),
         verticalArrangement = Arrangement.spacedBy(16.dp),

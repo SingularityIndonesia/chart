@@ -44,12 +44,12 @@ fun PieChart(
 
     // map items into list of start angle vs pie slices
     val startAngleVsPieSlices by remember(items) {
-        val totalWeight = items.mapNotNull { it.values.firstOrNull()?.toFloat() }.sum()
+        val totalWeight = items.mapNotNull { it.values.lastOrNull()?.toFloat() }.sum()
 
         val slices = items.fold(emptyList<Pair<StartAngleDegree, PieItem>>()) { acc, i ->
             val startAngle = acc.map { it.second.sweepAngleDegrees }.sum()
             val sweepAngle =
-                i.values.firstOrNull()?.toFloat().ifNull { 0f } / totalWeight * 360f
+                i.values.lastOrNull()?.toFloat().ifNull { 0f } / totalWeight * 360f
             val pieSlices = PieItem(
                 item = i,
                 sweepAngleDegrees = sweepAngle,

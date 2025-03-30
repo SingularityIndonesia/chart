@@ -18,7 +18,12 @@
 package io.github.singularityindonesia.chartcore.compose
 
 import androidx.compose.runtime.compositionLocalOf
+import androidx.compose.ui.graphics.ColorFilter
+import androidx.compose.ui.unit.Dp
+import androidx.compose.ui.unit.dp
 
 val LocalStartAngleDegree = compositionLocalOf { -90f }
 val LocalFullCircleDegree = compositionLocalOf { 360f }
 val LocalPieThicknessPercent = compositionLocalOf { .5f }
+val LocalColorFilter = compositionLocalOf<ColorFilter?> { null }
+val LocalLineWidth = compositionLocalOf<Dp> { 2.dp }
