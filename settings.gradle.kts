@@ -31,3 +31,4 @@ dependencyResolutionManagement {
 include(":composeApp")
 include(":core")
 include(":piechart")
+include(":linechart")

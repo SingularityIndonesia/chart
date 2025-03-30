@@ -17,7 +17,7 @@
  */
 package io.github.singularityindonesia.piechart
 
-import io.github.singularityindonesia.chart.core.record.ChartItem
+import io.github.singularityindonesia.chartcore.record.ChartItem
 
 data class PieItem(
     val item: ChartItem,

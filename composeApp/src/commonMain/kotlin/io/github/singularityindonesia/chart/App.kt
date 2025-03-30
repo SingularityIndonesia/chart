@@ -12,8 +12,8 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
-import io.github.singularityindonesia.chart.core.record.ChartItem
-import io.github.singularityindonesia.chart.core.record.Legend
+import io.github.singularityindonesia.chartcore.record.ChartItem
+import io.github.singularityindonesia.chartcore.record.Legend
 import io.github.singularityindonesia.chart.page.PieChartPage
 import org.jetbrains.compose.ui.tooling.preview.Preview
 

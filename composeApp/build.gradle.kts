@@ -70,6 +70,7 @@ kotlin {
             implementation(libs.androidx.lifecycle.runtime.compose)
 
             implementation(project(":piechart"))
+            implementation(project(":linechart"))
             implementation(project(":core"))
         }
         desktopMain.dependencies {

@@ -12,7 +12,7 @@ plugins {
 }
 
 val libraryName = "LineChart"
-group = "io.github.singularityindonesia.piechart"
+group = "io.github.singularityindonesia.linechart"
 version = "1.0.0"
 
 kotlin {
@@ -66,8 +66,6 @@ kotlin {
                 implementation(compose.ui)
                 implementation(compose.components.resources)
                 implementation(compose.components.uiToolingPreview)
-
-                implementation(project(":core"))
             }
         }
         val commonTest by getting {
@@ -79,7 +77,7 @@ kotlin {
 }
 
 android {
-    namespace = "io.github.singularityindonesia.${libraryName.lowercase()}"
+    namespace = "io.github.singularityindonesia.$libraryName"
     compileSdk = libs.versions.android.compileSdk.get().toInt()
     defaultConfig {
         minSdk = libs.versions.android.minSdk.get().toInt()

@@ -25,10 +25,10 @@ import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.graphics.drawscope.drawIntoCanvas
-import io.github.singularityindonesia.chart.core.record.ChartItem
-import io.github.singularityindonesia.chart.core.compose.LocalFullCircleDegree
-import io.github.singularityindonesia.chart.core.compose.LocalPieThicknessPercent
-import io.github.singularityindonesia.chart.core.compose.LocalStartAngleDegree
+import io.github.singularityindonesia.chartcore.record.ChartItem
+import io.github.singularityindonesia.chartcore.compose.LocalFullCircleDegree
+import io.github.singularityindonesia.chartcore.compose.LocalPieThicknessPercent
+import io.github.singularityindonesia.chartcore.compose.LocalStartAngleDegree
 
 typealias StartAngleDegree = Float
 

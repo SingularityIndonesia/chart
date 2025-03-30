@@ -11,7 +11,8 @@ plugins {
     alias(libs.plugins.composeCompiler)
 }
 
-group = "io.github.singularityindonesia.chart"
+val libraryName = "ChartCore"
+group = "io.github.singularityindonesia.${libraryName.lowercase()}"
 version = "1.0.0"
 
 kotlin {
@@ -28,7 +29,7 @@ kotlin {
         iosSimulatorArm64()
     ).forEach { iosTarget ->
         iosTarget.binaries.framework {
-            baseName = "ChartCore"
+            baseName = libraryName
             isStatic = true
         }
     }
@@ -37,12 +38,12 @@ kotlin {
 
     @OptIn(ExperimentalWasmDsl::class)
     wasmJs {
-        moduleName = "chart_core"
+        moduleName = libraryName.lowercase()
         browser {
             val rootDirPath = project.rootDir.path
             val projectDirPath = project.projectDir.path
             commonWebpackConfig {
-                outputFileName = "chart_core.js"
+                outputFileName = "${libraryName.lowercase()}.js"
                 devServer = (devServer ?: KotlinWebpackConfig.DevServer()).apply {
                     static = (static ?: mutableListOf()).apply {
                         // Serve sources to debug inside browser
@@ -76,7 +77,7 @@ kotlin {
 }
 
 android {
-    namespace = "io.github.singularityindonesia.chart.core"
+    namespace = "io.github.singularityindonesia.${libraryName.lowercase()}"
     compileSdk = libs.versions.android.compileSdk.get().toInt()
     defaultConfig {
         minSdk = libs.versions.android.minSdk.get().toInt()
