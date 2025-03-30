@@ -1,7 +1,9 @@
 # Jetpack Compose Multiplatform chart library that prioritizes simplicity
 
 ## Pie Chart
-<img src="https://github.com/user-attachments/assets/a5dcc0b5-753c-4dc9-ae87-c99cd38b661e" width="200">
+<img height="200" alt="Screenshot 2025-03-30 at 18 28 42" src="https://github.com/user-attachments/assets/317c4baa-d751-48e2-b952-dff1fefba5d1" />
+<img height="200" src="https://github.com/user-attachments/assets/a5dcc0b5-753c-4dc9-ae87-c99cd38b661e">
+<img src="https://github.com/user-attachments/assets/99eb961e-0107-4a3f-a879-dbb94c8c7a2e" height="200">
 
 ### Read: [piechart/README.md](piechart/README.md)
 
