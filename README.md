@@ -8,7 +8,7 @@
 ## Line Chart
 <img height="200" alt="Screenshot 2025-03-31 at 05 01 05" src="https://github.com/user-attachments/assets/cc101b2a-1339-48cb-bd69-fad4119ced71" />
 
-### Read: [linechart/README.md](piechart/README.md)
+### Read: [linechart/README.md](linechart/README.md)
 
 
 # License
