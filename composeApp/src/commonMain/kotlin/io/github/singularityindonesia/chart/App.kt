@@ -12,9 +12,9 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import io.github.singularityindonesia.chart.page.PieChartPage
 import io.github.singularityindonesia.chartcore.record.ChartItem
 import io.github.singularityindonesia.chartcore.record.Legend
-import io.github.singularityindonesia.chart.page.PieChartPage
 import org.jetbrains.compose.ui.tooling.preview.Preview
 
 @Composable
@@ -52,7 +52,7 @@ fun getItems(): List<ChartItem> {
     return (0..5 step 1).map {
         ChartItem(
             id = it.toString(),
-            value = it,
+            values = listOf(it),
             legend = Legend(
                 label = "Item $it",
                 color = colors[it % 5],

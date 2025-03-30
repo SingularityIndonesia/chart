@@ -22,6 +22,6 @@ import androidx.compose.runtime.Stable
 @Stable
 data class ChartItem(
     val id: String,
-    val value: Number,
+    val values: List<Number>,
     val legend: Legend
 )

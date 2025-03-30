@@ -25,10 +25,11 @@ import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.graphics.drawscope.drawIntoCanvas
-import io.github.singularityindonesia.chartcore.record.ChartItem
 import io.github.singularityindonesia.chartcore.compose.LocalFullCircleDegree
 import io.github.singularityindonesia.chartcore.compose.LocalPieThicknessPercent
 import io.github.singularityindonesia.chartcore.compose.LocalStartAngleDegree
+import io.github.singularityindonesia.chartcore.record.ChartItem
+import io.github.singularityindonesia.chartcore.util.ifNull
 
 typealias StartAngleDegree = Float
 
@@ -43,12 +44,12 @@ fun PieChart(
 
     // map items into list of start angle vs pie slices
     val startAngleVsPieSlices by remember(items) {
-        val totalWeight = items.map { it.value.toFloat() }.sum()
+        val totalWeight = items.mapNotNull { it.values.firstOrNull()?.toFloat() }.sum()
 
         val slices = items.fold(emptyList<Pair<StartAngleDegree, PieItem>>()) { acc, i ->
             val startAngle = acc.map { it.second.sweepAngleDegrees }.sum()
             val sweepAngle =
-                i.value.toFloat() / totalWeight * 360f
+                i.values.firstOrNull()?.toFloat().ifNull { 0f } / totalWeight * 360f
             val pieSlices = PieItem(
                 item = i,
                 sweepAngleDegrees = sweepAngle,
