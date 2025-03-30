@@ -55,7 +55,7 @@ fun PieChartPage(
 ### Result:
 <img src="https://github.com/user-attachments/assets/a5dcc0b5-753c-4dc9-ae87-c99cd38b661e" width="300">
 
-# Example of a Grayscale Animated Pie Chart
+# Example of a Color-Filtered Animated Pie Chart
 ``` kotlin
 @Composable
 fun PieChartPage(
