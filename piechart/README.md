@@ -4,12 +4,16 @@
 fun PieChartPage(
     items: List<ChartItem>
 ) {
-    PieChart(
-        modifier = Modifier
-            .size(400.dp)
-            .padding(16.dp),
-        items = items
-    )
+    CompositionLocalProvider(
+        LocalStartAngleDegree provides -90f,
+    ) {
+        PieChart(
+            modifier = Modifier
+                .size(400.dp)
+                .padding(16.dp),
+            items = items
+        )
+    }
 }
 ```
 ### Result:
