@@ -57,8 +57,7 @@ fun PieChartPage(
             )
         }
         item {
-            // region Red Line Chart
-            // filter line color into red
+            // filter color into gray scale
             val grayScaleFilter = remember {
                 ColorFilter.colorMatrix(
                     ColorMatrix().apply {
@@ -76,6 +75,7 @@ fun PieChartPage(
             }
         }
         item {
+            // With start angle animation
             CompositionLocalProvider(
                 LocalStartAngleDegree provides (valueAnimator * 360f) - 90f,
             ) {
@@ -86,6 +86,8 @@ fun PieChartPage(
             }
         }
         item {
+            // With wipe angle animation
+            // scaling the full circle degree to alter the full circle wipe angle perception
             CompositionLocalProvider(
                 LocalFullCircleDegree provides valueAnimator * 360f,
             ) {
@@ -96,6 +98,7 @@ fun PieChartPage(
             }
         }
         item {
+            // With thickness animation
             CompositionLocalProvider(
                 LocalPieThicknessPercent provides valueAnimator
             ) {
@@ -106,6 +109,7 @@ fun PieChartPage(
             }
         }
         item {
+            // With All Animation
             CompositionLocalProvider(
                 LocalStartAngleDegree provides (valueAnimator * 360f) - 90f,
                 LocalFullCircleDegree provides valueAnimator * 360f,
